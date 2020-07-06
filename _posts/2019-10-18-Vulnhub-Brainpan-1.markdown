@@ -136,7 +136,7 @@ Luckily, there are no protections such as DEP or ASLR in this challenge, so find
 Just to make sure, we'll check to see if we have enough space at the end of our payload to include a reverse shell payload. Typically the shellcode required for a reverse shell is around 300-400 bytes after encoding.
 ![](/images/brainpan-1/17.jpg)
 
-Great! We have 1D4 bytes of C's in the stack, this comes out to 468 bytes which is plenty of room for the shellcode we will be sending.
+Great! We have 1D4 bytes of C's in the stack, this comes out to 468 bytes which is plenty of room for the shellcode we will be sending. You can toggle this count by double clicking on the beginning of the C's in the Stack pane and then scroll down to the bottom of the C's for the offset byte count.
 
 Mona will be very helpful for finding an appropriate instruction address to point EIP to. First we use `!mona jmp -r esp` to show all instances of JMP ESP in the application.
 ![](/images/brainpan-1/18.jpg)
